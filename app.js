@@ -71,15 +71,15 @@ numerator.value // 3*/
 const numerator = {
     value: 1,
     double: function () {
-        this.value *= 2
+        this.value *= 2;
         return this
     },
     plusOne: function () {
-        this.value += 1
+        this.value += 1;
         return this
     },
     minusOne: function () {
-        this.value -= 1
+        this.value -= 1;
         return this
     },
 };
@@ -126,7 +126,7 @@ getSquare для объекта sizes*/
 let sizes = {
     width: 5,
     height: 10
-}
+};
 
 const getSquare = function () {
     return this.width * this.height
@@ -166,11 +166,19 @@ console.log(getElementHeight());
 
 const parity = () => {
     const numArray = [1, 2, 3, 5, 8, 9, 10];
-    const parityArray = [];
-    numArray.forEach((item) => {
-        parityArray.push({digit: item, odd: item % 2 === 0 ? true : false})
-    });
-    return parityArray;
+    return numArray.map(item => {
+            const parityArray = {digit: item, odd: item % 2 === 0};
+            return parityArray;
+        }
+    );
+
+    /* const parityArray = [];
+     numArray.forEach((item) => {
+         parityArray.push({digit: item, odd: item % 2 === 0})
+     });
+     return parityArray;
+     */
+
 };
 
 console.log(parity());
@@ -180,11 +188,7 @@ console.log(parity());
 
 const arrNumber = [12, 4, 50, 1, 0, 18, 40];
 const comparisonNum = () => {
-    if (arrNumber.some(x => x === 0) === true) {
-        return false;
-    } else {
-        return true;
-    }
+    if (arrNumber.some(x => x === 41)) return false;
 };
 
 console.log(comparisonNum());
@@ -224,11 +228,11 @@ const params = [
     {char: "e", index: 7}
 ];
 
-const indexStr = () => {
+const sortIndex = () => {
     return params.sort((a, b) => a.index - b.index);
 };
 
-console.log(indexStr());
+console.log(sortIndex());
 /*-----------------------------Exampe 2.5---------------------------*/
 /*Отсортируйте массив массивов так, чтобы вначале располагались наименьшие массивы
 (размер массива определяется его длиной): [  [14, 45],  [1],  ['a', 'c', 'd']  ] → [ [1], [14, 45], ['a', 'c', 'd'] ]*/
@@ -258,11 +262,11 @@ console.log(sortArr());
 Отсортировать их по возрастающему количеству ядер (cores).*/
 
 const laptop = [
-    {cpu: 'intel', info: {cores: 2, сache: 3}},
-    {cpu: 'intel', info: {cores: 4, сache: 4}},
-    {cpu: 'amd', info: {cores: 1, сache: 1}},
-    {cpu: 'intel', info: {cores: 3, сache: 2}},
-    {cpu: 'amd', info: {cores: 4, сache: 2}}
+    {cpu: 'intel', info: {cores: 2, cache: 3}},
+    {cpu: 'intel', info: {cores: 4, cache: 4}},
+    {cpu: 'amd', info: {cores: 1, cache: 1}},
+    {cpu: 'intel', info: {cores: 3, cache: 2}},
+    {cpu: 'amd', info: {cores: 4, cache: 2}}
 ];
 
 const sortLaptop = () => {
