@@ -188,7 +188,7 @@ console.log(parity());
 
 const arrNumber = [12, 4, 50, 1, 0, 18, 40];
 const comparisonNum = () => {
-    if (arrNumber.some(x => x === 41)) return false;
+    if (arrNumber.some(x => x === 0)) return false;
 };
 
 console.log(comparisonNum());
